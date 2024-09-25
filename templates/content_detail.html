@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ content.title }}</h1>
+<p><a href="{{ content.url }}">{{ content.url }}</a></p>
+<p>{{ content.description }}</p>
+
+<p>
+    <a href="{% url 'add_branch_content' content.pk %}">Add a Top-Level Branch</a>
+</p>
+
+<h2>Branches</h2>
+<ul>
+    {% for branch in branches %}
+    <li>
+        <a href="{% url 'branch_detail' branch.pk %}">{{ branch.title }}</a>
+    </li>
+    {% empty %}
+    <li>No branches yet. Be the first to <a href="{% url 'add_branch_content' content.pk %}">add a top-level branch</a>.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,55 @@
+# created by virtualenv automatically
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.virtualenv/
+.venv/
+
+# Django migrations
+**/migrations/
+
+# Secret settings
+**/settings.py
+
+# Database files
+*.sqlite3
+*.db
+
+# Static and media files
+staticfiles/
+media/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# PyCharm project files
+.idea/
+
+# VSCode project files
+.vscode/
+
+# Logs
+*.log
+
+# Git files
+.git/
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# Pytest cache
+.pytest_cache/
+
+# Build directories
+build/
+dist/
+
+# Node modules (if using Node.js)
+node_modules/

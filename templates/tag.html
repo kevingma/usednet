@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Contents tagged with "{{ tag.name }}"</h1>
+<ul>
+    {% for content in contents %}
+    <li>
+        <a href="{% url 'content_detail' content.pk %}">{{ content.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

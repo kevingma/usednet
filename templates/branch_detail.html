@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ branch.title }}</h1>
+{% if branch.url %}
+<p><a href="{{ branch.url }}">{{ branch.url }}</a></p>
+{% endif %}
+
+<p>
+    <a href="{% url 'add_branch_branch' branch.pk %}">Respond to this Branch</a>
+</p>
+
+<h2>Responses</h2>
+<ul>
+    {% for response in responses %}
+    <li>
+        <a href="{% url 'branch_detail' response.pk %}">{{ response.title }}</a>
+    </li>
+    {% empty %}
+    <li>No responses yet. Be the first to <a href="{% url 'add_branch_branch' branch.pk %}">respond to this branch</a>.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
